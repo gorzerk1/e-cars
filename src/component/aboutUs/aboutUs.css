@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+    padding:0;
+    border: 0;
+    margin: 0;
+}
+
+.aboutUs--body {
+    position: relative;
+    height: 110vh;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Poppins,sans-serif;
+    overflow: hidden;
+    color:black;
+    z-index: 10;
+    background-color: #fff;
+
+}
+.aboutUs--background {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.aboutUs--container {
+    display: flex;
+    width: 60%;
+    height:100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutUs--rightBox {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+.aboutUs--rightBox > :nth-child(1) {
+    font-weight: bolder;
+    font-size: 1.2rem;
+    margin-bottom:10px;
+}
+.aboutUs--rightBox > :nth-child(2) {
+    font-weight: bolder;
+    font-size: 2.5rem;
+    line-height: 1.1;
+    margin-bottom:20px;
+}
+.aboutUs--rightBox > :nth-child(3) {
+    font-size: 0.85rem;
+    color:gray;
+    margin-bottom:40px;
+}
+.aboutUs--rightBox > :nth-child(4) {
+    width: 35%;
+    height:50px;
+    color:white;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    background-color: #43799f;
+}
+.aboutUs--leftBox {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    gap:25px
+}
+
+.aboutUs--leftBox > div {
+    display: flex;
+    justify-content: flex-end;
+    gap:30px
+}
+.aboutUs--smallBox {
+    width: 60%;
+
+}
+.aboutUs--smallBox > :nth-child(1) {
+    font-size: 1.4rem;
+    font-weight: bolder;
+}
+.aboutUs--smallBox > :nth-child(2) {
+    font-size: 0.85rem;
+    color:gray
+}

@@ -1,0 +1,44 @@
+@import url('https://use.fontawesome.com/releases/v6.0.0-beta2/css/all.css');
+
+body {
+    padding:0;
+    border: 0;
+    margin: 0;
+}
+
+.installApp--body {
+    position: relative;
+    height: 60vh;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: Poppins,sans-serif;
+    overflow: hidden;
+    background-color: #f8f8f8;
+}
+.installApp--container {
+    width: 70%;
+    height:100%;
+    display: flex;
+}
+
+.installApp--leftBox {
+    width: 40%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:20px
+}
+.installApp--leftBox > :nth-child(1) {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    line-height: 1.1
+}
+.installApp--leftBox > :nth-child(2) {
+    font-size: 1rem;
+    color:gray;
+}

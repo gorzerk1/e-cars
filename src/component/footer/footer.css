@@ -1,0 +1,51 @@
+@import url('https://use.fontawesome.com/releases/v6.0.0-beta2/css/all.css');
+
+body {
+    padding:0;
+    border: 0;
+    margin: 0;
+}
+
+.footer--body {
+    position: relative;
+    height: 40vh;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Poppins,sans-serif;
+    overflow: hidden;
+    background-color: #fff;
+}
+.footer--container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height:80%;
+}
+
+.footer--smallBox {
+    width: 20%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap:10px;
+
+}
+.footer--smallBox > :nth-child(1) {
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+.footer--firstBox > :nth-child(2) {
+    color:gray;
+}
+.footer--lastBox > button {
+    width: 96.5% ;
+    border:0;
+    background-color: #43799f;
+    color:white;
+}

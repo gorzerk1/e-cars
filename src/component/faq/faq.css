@@ -1,0 +1,94 @@
+@import url('https://use.fontawesome.com/releases/v6.0.0-beta2/css/all.css');
+
+body {
+    padding:0;
+    border: 0;
+    margin: 0;
+}
+
+.faq--body {
+    position: relative;
+    min-height: 90vh;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: Poppins,sans-serif;
+    overflow: hidden;
+    background-color: #fff;
+}
+.faq--body > img {
+    position: absolute;
+    left:-10%;
+    top:35%;
+}
+
+.faq--title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    width: 45%;
+    height:40vh
+}
+
+.faq--title > :nth-child(1) {
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+.faq--title > :nth-child(2) {
+    font-weight: bolder;
+    font-size: 2.5rem;
+}
+
+.faq--title > :nth-child(3) {
+    font-size: 0.9rem;
+    color:gray;
+    text-align: center;
+}
+
+.faq--container {
+    width: 45%;
+    min-height:25vh;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    margin-top:50px;
+}
+
+.faq--container > div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height:33%;
+    cursor: pointer;
+}
+
+.faq--smallBox {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.faq--smallBox > :nth-child(1) {
+    width: 90%;
+    height:8vh;
+    font-weight: bolder;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq--smallBox > div > img {
+    height:20px;
+    width: 20px;
+}
+
+.faq--smallBox > :nth-child(2) {
+    height:auto;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 90%;
+}

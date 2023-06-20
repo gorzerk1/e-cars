@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+
+.main--body {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 95vh;
+    overflow: hidden;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main--body > :first-child {
+    position: absolute;
+    right:0;
+    top:0;
+    z-index: 1;
+}
+
+.main--container {
+    position: relative;
+    width: 70%;
+    height: 60%;
+    display: flex;
+    z-index: 2;
+    font-family: Poppins,sans-serif;
+}
+
+.main--info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    height: 100%;
+}
+.main--info > :nth-child(1) {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.main--info > :nth-child(2) {
+    font-size: 2.7rem;
+    font-weight: bolder;
+    
+}
+.main--info > :nth-child(3) {
+    font-size: 0.9rem;
+    color:#706f7b;
+    font-weight: 400;
+    margin-top:20px;
+}
+.main--buttons {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+}
+.main--buttons > :nth-child(1) {
+    border:0;
+    background-color: #43799f;
+    color:white;
+    height:55px;
+    width:170px;
+    border-radius: 5px;
+    font-weight: bolder;
+    box-shadow: 0px 3px 5px 2px rgba(67,121,159,0.5);
+}
+
+.main--buttons > :nth-child(2) {
+    border:0;
+    background-color: black;
+    color:white;
+    height:55px;
+    width:170px;
+    border-radius: 5px;
+    font-weight: bolder;
+    box-shadow: 0px 3px 5px 2px rgba(0, 0, 0, 0.5);
+}
+.main--car {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    align-items: flex-end; 
+}
+
+@media (max-width: 1450px) {
+    .main--container{
+        width: 90%;
+    }
+    .main--car {
+        justify-content: center;
+        width:60%
+    }
+    .main--info{
+        width: 40%;
+    }
+    .main--car > img {
+        width: 669px;
+        height:381px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .main--car {
+        display: none;
+    }
+    .main--container{
+        justify-content: center;
+        text-align: center;
+    }
+    .main--buttons {
+        justify-content: center;
+    }
+    .main--info{
+        width: 100%;
+    }
+}
+@media (max-width: 425px) {
+    .main--buttons {
+        flex-direction: column;
+        height:25%;
+    }
+    .main--buttons {
+        margin-top:20px
+    }
+    .main--buttons > :nth-child(1),.main--buttons > :nth-child(2) {
+        width: 90%;
+    }
+}

@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+    padding:0;
+    border: 0;
+    margin: 0;
+}
+
+.review--body {
+    position: relative;
+    height: 60vh;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Poppins,sans-serif;
+    overflow: hidden;
+    color:black;
+    z-index: 10;
+    background-color: #f8f8f8;
+
+}
+.review--title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    height:45%;
+}
+
+.review--title > :nth-child(1) {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.review--title > :nth-child(2) {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.review--title > :nth-child(3) {
+    font-size: 0.85rem;
+    text-align: center;
+    color:gray
+}
+.review--container {
+    width: 60%;
+    height:55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:50px
+}
+.review--whiteBackground {
+    width: 45%;
+    height:90%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.review--leftBox {
+    width: 90%;
+    height:80%;
+}
+.review--rightBox {
+    width: 90%;
+    height:80%;
+}
+.review--card {
+    display: flex;
+    height:30%;
+    width: 100%;
+}
+.review--card > :nth-child(1) {
+    width: 55px;
+    height:55px;
+    border-radius: 50px;
+}
+.review--rightBox > :nth-child(1) , .review--leftBox > :nth-child(1) {
+    width: 90%;
+    display: flex;
+    font-size: 1.2rem;
+}
+.review--card {
+    height:50%;
+    display: flex;
+    align-items: center;
+    gap:15px
+}
+.review--card > div > :first-child {
+    font-weight: bolder;
+}
+.review--card > :nth-child(3) {
+    margin-left:auto
+}
