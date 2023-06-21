@@ -1,4 +1,3 @@
-
 import './aboutUs.css';
 
 function AboutUs() {
@@ -6,7 +5,7 @@ function AboutUs() {
   return (
     <div className='aboutUs--body' >
       <div className='aboutUs--background'>
-        <img src="../../threeCars.png" alt="" />
+        <img className='aboutUs--backgroundImg' src="../../threeCars.png" alt="" />
       </div>
       <div className='aboutUs--container'>
         <div className='aboutUs--rightBox'>
