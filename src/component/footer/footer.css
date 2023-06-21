@@ -51,9 +51,6 @@ body {
     font-weight: bolder;
     color:black;
 }
-input[type="text"]{
-    text-align: ;
-}
 
 @media (max-width:1020px) {
     .footer--container {
