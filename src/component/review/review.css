@@ -187,3 +187,25 @@ body {
     }
     
 }
+
+@media (max-height:780px){
+    .review--whiteBackground {
+        height:32vh;
+        margin-bottom:20px
+    }
+}
+
+
+@media (max-height:620px){
+    .review--whiteBackground {
+        height:38vh;
+
+    }
+}
+
+@media (max-height:480px){
+    .review--whiteBackground {
+        height:50vh;
+
+    }
+}
