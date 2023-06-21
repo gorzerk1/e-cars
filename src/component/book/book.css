@@ -62,6 +62,11 @@ label {
 span {
     color:#43799f;
 }
+.book--smallBox > button {
+    background-color: #43799f;
+    color:white;
+    font-weight: bolder;
+}
 
 .book--title {
     padding: 10px 0;
@@ -118,5 +123,8 @@ span {
     }
     .book--container > :nth-child(1) {
         align-self: center;
+    }
+    .book--smallBox > button {
+        width: 95.5%;
     }
 }
