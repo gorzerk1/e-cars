@@ -8,14 +8,15 @@ body {
 
 .information--body {
     position: relative;
-    height: 60vh;
+    height:auto;
+    min-height: 60vh;
     width: 100%;
     z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: Poppins,sans-serif;
-    overflow: hidden;
+    overflow: auto;
     background-color: #f8f8f8;
 }
 .information--container {
@@ -23,6 +24,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: auto;
     width: 70%;
     height: 80%;
 }
@@ -33,6 +35,7 @@ body {
     justify-content: center;
     align-items: center;
     height:20%;
+    margin-top:50px
 }
 .information--title > :nth-child(1) {
     font-size: 1.5rem;
@@ -91,7 +94,7 @@ body {
 }
 @media (max-width:750px) {
     .information--body {
-        height: 150vh;
+        min-height: 150vh;
     }
     .information--data {
         flex-direction: column;

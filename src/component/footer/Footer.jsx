@@ -34,7 +34,7 @@ function Footer() {
         <div className='footer--smallBox footer--lastBox'>
           <div>SUBSCRIPTION</div>
           <div>Subscribe your Email address for latest news & updates.</div>
-          <input type="text" name="" id="" />
+          <input type="text" name="" id="" placeholder='Enter Email Address'/>
           <button>Submit</button>
         </div>
       </div>

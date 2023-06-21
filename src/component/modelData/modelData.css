@@ -8,7 +8,9 @@ body {
 
 .modelData--body {
     position: relative;
-    height: 90vh;
+    height:auto;
+    min-height: 100vh;
+    overflow: auto;
     width: 100%;
     z-index: 10;
     display: flex;
@@ -23,9 +25,11 @@ body {
     width: 70%;
     height:30%;
     display: flex;
+    overflow: auto;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin:100px 0;
 }
 
 .modelData--title > :nth-child(1) {
@@ -129,7 +133,7 @@ body {
 
 @media (max-width: 1200px) {
     .modelData--body {
-        height: 110vh;
+        min-height: 120vh;
     }
     .modelData--title {
         width: 80%;
@@ -148,7 +152,8 @@ body {
         grid-area:image;
     }
     .modelData--data {
-        grid-area:data
+        grid-area:data;
+        margin-top:50px
     }
     .modelData--cars {
         display: grid;
@@ -173,7 +178,7 @@ body {
 
 @media (max-width: 920px) {
     .modelData--body {
-        height: 150vh;
+        min-height: 150vh;
     }
     .modelData--title {
         width: 80%;
@@ -194,6 +199,10 @@ body {
     .modelData--data {
         height:40%;
         align-self: center;
+        margin:0;
+    }
+    .modelData--button {
+        margin:15px 0
     }
 }
 
@@ -218,7 +227,7 @@ body {
 
 @media (max-width: 500px) {
     .modelData--body {
-        height: 180vh;
+        min-height: 180vh;
     }
     .modelData--cars {
         grid-template-columns: repeat(1 , 1fr);

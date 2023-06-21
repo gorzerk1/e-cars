@@ -14,13 +14,13 @@ function InstallApp() {
           Incommode so intention defective at convinced. 
           Led income months itself and houses you.
           </div>
-          <div>
+          <div className='installApp--button'>
             <img src="../../googleStore.svg" alt="" />
             <img src="../../appleStore.svg" alt="" />
           </div>
         </div>
         <div className='installApp--rightBox'>
-          
+          <img src="../../phone.png" alt="" />
         </div>
       </div>
     </div>

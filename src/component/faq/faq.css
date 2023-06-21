@@ -8,6 +8,7 @@ body {
 
 .faq--body {
     position: relative;
+    height:auto;
     min-height: 90vh;
     width: 100%;
     z-index: 10;
@@ -16,13 +17,15 @@ body {
     justify-content: flex-start;
     align-items: center;
     font-family: Poppins,sans-serif;
-    overflow: hidden;
+    overflow: auto;
     background-color: #fff;
 }
 .faq--body > img {
     position: absolute;
     left:-10%;
     top:35%;
+    width: 34%;
+    height: auto;
 }
 
 .faq--title {
@@ -30,9 +33,13 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    align-self: center;
     gap:20px;
-    width: 45%;
-    height:40vh
+    width: 55%;
+    height:auto;
+    min-height:40vh;
+    overflow: auto;
+    
 }
 
 .faq--title > :nth-child(1) {
@@ -92,3 +99,87 @@ body {
     box-sizing: border-box;
     width: 90%;
 }
+
+@media (max-width:1300px) {
+    .faq--body {
+        min-height: 90vh;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+    .faq--body > img {
+        top:33%;
+        width: 50%;
+        height: auto;
+    }
+     .faq--container {
+        margin-right:50px;
+        width: 55%;
+    }
+    
+}
+
+@media (max-width:1050px) {
+    .faq--title > :nth-child(2) {
+        font-size: 1.5rem;
+    }
+    .faq--body > img {
+        position: absolute;
+        left:-15%;
+        top:45%;
+        width: 44%;
+        height: auto;
+    }
+     .faq--container {
+        margin-right:25px;
+        width: 65%;
+    }
+}
+
+@media (max-width:780px) {
+    .faq--body > img {
+        display: none;
+    }
+    .faq--body {
+        align-items: center;
+    }
+     .faq--container {
+        margin-right:0;
+        width: 90%;
+    }
+    .faq--title {
+        width: 75%;
+    }
+}
+
+@media (max-width:570px) {
+
+    .faq--smallBox > :nth-child(1) {
+        font-size: 0.8rem;
+        width: 100%;
+    }
+    .faq--title > :nth-child(1) {
+        font-weight: bolder;
+        font-size: 1rem;
+    }
+    
+    .faq--title > :nth-child(2) {
+        font-size: 1.4rem;
+    }
+    
+    .faq--title > :nth-child(3) {
+        font-size: 0.7rem;
+        color:gray;
+        text-align: center;
+    }
+    .faq--title {
+        width: 95%;
+    }
+    .faq--smallBox > div > img {
+        margin-right:15px
+    }
+}
+@media (max-width:368px) {
+    .faq--title > :nth-child(2) {
+        font-size: 1.2rem;
+    }
+} 
