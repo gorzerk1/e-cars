@@ -8,19 +8,19 @@ body {
 
 .aboutUs--body {
     position: relative;
-    height: 110vh;
+    height: auto;  /* Update from 100vh to auto */
+    min-height: 100vh; /* Add min-height property */
     width: 100%;
     z-index: 10;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     font-family: Poppins,sans-serif;
-    overflow: hidden;
+    overflow: auto; /* Add overflow property */
     color:black;
     z-index: 10;
     background-color: #fff;
-
 }
 .aboutUs--background {
     width: 100%;
@@ -28,19 +28,22 @@ body {
     justify-content: center;
 }
 .aboutUs--backgroundImg {
-    width: 70%;
+    width: 50%;
     height: auto;
 }
 .aboutUs--container {
     display: flex;
     width: 60%;
-    height:100%;
+    height: auto; /* Update from 100% to auto */
+    min-height: 100%; /* Add min-height property */
     justify-content: center;
     align-items: center;
+    padding: 0 20px; /* Add padding to the sides of the container */
+    overflow: auto; /* Add overflow property */
 }
 
 .aboutUs--rightBox {
-    width: 45%;
+    width: 100%; /* Change to 100% */
     display: flex;
     flex-direction: column;
 }
@@ -69,7 +72,7 @@ body {
     background-color: #43799f;
 }
 .aboutUs--leftBox {
-    width: 55%;
+    width: 100%; /* Change to 100% */
     display: flex;
     flex-direction: column;
     gap:25px
@@ -80,8 +83,12 @@ body {
     justify-content: flex-end;
     gap:30px
 }
+.aboutUs--leftBox > div > img {
+    width: 125px;
+    height: 125px;
+}
 .aboutUs--smallBox {
-    width: 60%;
+    width: 100%;
 
 }
 .aboutUs--smallBox > :nth-child(1) {
@@ -96,4 +103,68 @@ body {
     .aboutUs--container {
         width: 80%;
     }
+    .aboutUs--backgroundImg {
+        width: 80%;
+    }
+    .aboutUs--leftBox {
+        justify-content: center;
+    }
 }
+@media (max-width:1000px) { 
+    .aboutUs--container {
+        flex-direction: column;
+        gap:50px
+    }
+    .aboutUs--body {
+        min-height: 120vh
+    }
+}
+@media (max-height:920px) {
+    .aboutUs--body {
+        min-height: 120vh
+    }
+}
+@media (max-height:800px) {
+    .aboutUs--body {
+        min-height: 140vh
+    }
+}
+@media (max-width:560px) {
+    .aboutUs--leftBox > div > img {
+        width: 100px;
+        height: 100px;
+    }
+    .aboutUs--backgroundImg {
+        width: 90%;
+    }
+    .aboutUs--rightBox {
+        text-align: center;
+        align-items: center;
+    }
+} 
+@media (max-width:460px) {
+    .aboutUs--body {
+        min-height: 170vh
+    }
+    .aboutUs--leftBox > div {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .aboutUs--rightBox {
+        text-align: center;
+        align-items: center;
+    }
+    .aboutUs--rightBox > :nth-child(4) {
+        width: 279px;
+        height:50px;
+        color:white;
+        font-weight: bolder;
+        font-size: 1.2rem;
+        background-color: #43799f;
+        box-shadow: 0px 3px 5px 2px rgba(67,121,159,0.5);
+    }
+}
+
+
+

@@ -74,7 +74,8 @@ function Book() {
             </div>
             <input type="date"/>
           </div>
-          <div className='book--smallBox'>
+          <div className='book--smallBox book--button'>
+            <div></div>
             <button>Book</button>
           </div>
         </div>
