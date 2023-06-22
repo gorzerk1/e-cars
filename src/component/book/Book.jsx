@@ -63,9 +63,17 @@ function Book() {
             <select onChange={e => setCarType(e.target.value)} value={carType}>
               <option value="">Select a car type</option>
               <option value="Tesla Model 3">Tesla Model 3</option>
-              {/* Other options */}
+              <option value="Toyota RAV 4">Toyota RAV 4</option>
+              <option value="Nissan Sentra">Nissan Sentra</option>
+              <option value="Toyota Yaris">Toyota Yaris</option>
+              <option value="BMW sedan 5">BMW sedan 5</option>
+              <option value="BMW Coupe 2">BMW Coupe 2</option>
+              <option value="Mazda 6">Mazda 6</option>
+              <option value="Ssangyong Rexton">Ssangyong Rexton</option>
+              <option value="Honda Civic Type R">Honda Civic Type R</option>
+              <option value="Chery tiggo 8 pro">Chery Tiggo 8 Pro</option>
             </select>
-            <span className='error'>{errors["carType"]}</span>
+            <span className='book--error'>{errors["carType"]}</span>
           </div>
           <div className='book--smallBox'>
             <div className='book--title'>
@@ -73,11 +81,19 @@ function Book() {
               <label>Pick-up <span>*</span></label>
             </div>
             <select onChange={e => setPickUp(e.target.value)} value={pickUp}>
-              <option value="">Select a pick-up location</option>
-              <option value="Tel-Aviv">Tel-Aviv</option>
-              {/* Other options */}
+              <option value="">Select a car type</option>
+              <option value="Tesla Model 3">Tesla Model 3</option>
+              <option value="Toyota RAV 4">Toyota RAV 4</option>
+              <option value="Nissan Sentra">Nissan Sentra</option>
+              <option value="Toyota Yaris">Toyota Yaris</option>
+              <option value="BMW sedan 5">BMW sedan 5</option>
+              <option value="BMW Coupe 2">BMW Coupe 2</option>
+              <option value="Mazda 6">Mazda 6</option>
+              <option value="Ssangyong Rexton">Ssangyong Rexton</option>
+              <option value="Honda Civic Type R">Honda Civic Type R</option>
+              <option value="Chery tiggo 8 pro">Chery Tiggo 8 Pro</option>
             </select>
-            <span className='error'>{errors["pickUp"]}</span>
+            <span className='book--error'>{errors["pickUp"]}</span>
           </div>
           <div className='book--smallBox'>    
             <div className='book--title'>
@@ -85,11 +101,17 @@ function Book() {
               <label>Drop-off <span>*</span></label>
             </div>
             <select onChange={e => setDropOff(e.target.value)} value={dropOff}>
-              <option value="">Select a drop-off location</option>
+              <option value="">Select a pick-up location</option>
               <option value="Tel-Aviv">Tel-Aviv</option>
-              {/* Other options */}
+              <option value="Petah-Tikva">Petah-Tikva</option>
+              <option value="Beer-Sheva">Beer-Sheva</option>
+              <option value="Rishon-LeTsiyon">Rishon-LeTsiyon</option>
+              <option value="Eilot">Eilot</option>
+              <option value="Holon">Holon</option>
+              <option value="Natanya">Natanya</option>
+              <option value="Haifa">Haifa</option>
             </select>
-            <span className='error'>{errors["dropOff"]}</span>
+            <span className='book--error'>{errors["dropOff"]}</span>
           </div>
           <div className='book--smallBox'>
             <div className='book--title'>
@@ -97,7 +119,7 @@ function Book() {
               <label>Pick-up Date <span>*</span></label>
             </div>
             <input type="date" min={tomorrow.toISOString().split('T')[0]} value={pickUpDate} onChange={e => setPickUpDate(e.target.value)}/>
-            <span className='error'>{errors["pickUpDate"]}</span>
+            <span className='book--error'>{errors["pickUpDate"]}</span>
           </div>
           <div className='book--smallBox'>
             <div className='book--title'>
@@ -105,11 +127,11 @@ function Book() {
               <label>Drop-off Date <span>*</span></label>
             </div>
             <input type="date" min={dayAfterTomorrow.toISOString().split('T')[0]} value={dropOffDate} onChange={e => setDropOffDate(e.target.value)}/>
-            <span className='error'>{errors["dropOffDate"]}</span>
+            <span className='book--error'>{errors["dropOffDate"]}</span>
           </div>
           <div className='book--smallBox book--button'>
-            <div></div>
             <button type="submit">Book</button>
+            <div className='book--error'></div>
           </div>
         </form>
       </div>
