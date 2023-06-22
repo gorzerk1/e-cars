@@ -86,7 +86,13 @@ span {
     justify-content: flex-end;
     margin-bottom:50px;
 }
-
+.book--button > button {
+    cursor: pointer;
+}
+.book--smallBox > button:active {
+    transform: scale(0.95);
+    transition: transform 0.1s;
+}
 
 @media (max-width:1100px) {
     .book--container {
