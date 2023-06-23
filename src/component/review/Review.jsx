@@ -10,8 +10,8 @@ function Review() {
   const animation = useSpring({
     from: { opacity: 0, transform: 'translate3d(0,50px,0)' },
     to: {
-      opacity: isIntersecting && !hasAnimated ? 1 : 1,
-      transform: isIntersecting && !hasAnimated ? 'translate3d(0,0px,0)' : 'translate3d(0,0px,0)'
+      opacity: hasAnimated ? 1 : (isIntersecting ? 1 : 0), 
+      transform: hasAnimated ? 'translate3d(0,0px,0)' : (isIntersecting ? 'translate3d(0,0px,0)' : 'translate3d(0,50px,0)')
     },
     delay: 0,
     config: { duration: 1000 },
@@ -32,7 +32,8 @@ function Review() {
       observer.unobserve(ref.current);
     };
   }, []);
-  
+
+
   return (
     <div className='review--body' ref={ref}>
       <div className='review--title'>
