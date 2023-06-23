@@ -8,8 +8,8 @@ body {
 
 .aboutUs--body {
     position: relative;
-    height: auto;  /* Update from 100vh to auto */
-    min-height: 100vh; /* Add min-height property */
+    height: auto; 
+    min-height: 100vh; 
     width: 100%;
     z-index: 10;
     display: flex;
@@ -17,10 +17,10 @@ body {
     justify-content: flex-end;
     align-items: center;
     font-family: Poppins,sans-serif;
-    overflow: auto; /* Add overflow property */
+    overflow: auto;
     color:black;
     z-index: 10;
-    background-color: #fff;
+    background-color: #f8f8f8;
 }
 .aboutUs--background {
     width: 100%;
@@ -34,16 +34,15 @@ body {
 .aboutUs--container {
     display: flex;
     width: 60%;
-    height: auto; /* Update from 100% to auto */
-    min-height: 100%; /* Add min-height property */
+    height: auto; 
+    min-height: 100%; 
     justify-content: center;
     align-items: center;
-    padding: 0 20px; /* Add padding to the sides of the container */
-    overflow: auto; /* Add overflow property */
+    padding: 0 20px; 
 }
 
 .aboutUs--rightBox {
-    width: 100%; /* Change to 100% */
+    width: 100%; 
     display: flex;
     flex-direction: column;
 }
@@ -72,7 +71,7 @@ body {
     background-color: #43799f;
 }
 .aboutUs--leftBox {
-    width: 100%; /* Change to 100% */
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap:25px
@@ -99,6 +98,7 @@ body {
     font-size: 0.85rem;
     color:gray
 }
+
 @media (max-width:1400px) {
     .aboutUs--container {
         width: 80%;

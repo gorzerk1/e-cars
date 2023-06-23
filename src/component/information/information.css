@@ -24,7 +24,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: auto;
     width: 70%;
     height: 80%;
 }
@@ -60,6 +59,7 @@ body {
 .information--smallBox {
     display: flex;
     align-items: center;
+    
 }
 .information--smallBox > img {
     width: 150px;

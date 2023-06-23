@@ -17,7 +17,7 @@ body {
     align-items: center;
     font-family: Poppins,sans-serif;
     overflow: hidden;
-    background-color: #f8f8f8;
+    background-color: #ffffff;
 }
 
 .book--container {
@@ -37,6 +37,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin:10px 0;
 }
 .book--grid {
     display: grid;
@@ -62,7 +63,7 @@ label {
 span {
     color:#43799f;
 }
-.book--smallBox > button {
+.book--smallBox button {
     background-color: #43799f;
     color:white;
     font-weight: bolder;
@@ -89,7 +90,11 @@ span {
 .book--button > button {
     cursor: pointer;
 }
-.book--smallBox > button:active {
+.book--button > img {
+    height:20px;
+    width: 20px;
+}
+.book--smallBox button:active {
     transform: scale(0.95);
     transition: transform 0.1s;
 }

@@ -19,7 +19,7 @@ body {
     flex-direction: column;
     font-family: Poppins,sans-serif;
     overflow: hidden;
-    background-color: #f8f8f8;
+    background-color: #ffffff;
 }
 .modelData--title {
     width: 70%;
@@ -114,6 +114,7 @@ body {
     background-color: #43799f ;
     color:white;
     width: 100%;
+    margin-top:25px;
 }
 .modelData--image {
     width: 58%;

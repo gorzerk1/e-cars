@@ -1,29 +1,94 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import { useSpring, animated } from 'react-spring';
 import './modelData.css';
 
 function ModelData() {
+  const ref = useRef();
+  const [isInView, setIsInView] = useState(false);
+  const checkScroll = () => {
+    const scrollPercent = (ref.current.getBoundingClientRect().top) / window.innerHeight;
+    if (scrollPercent < 0.4) {
+      setIsInView(true);
+    }
+  };
+
+  const animations = [
+    useSpring({
+      from: { opacity: 0, transform: 'translate3d(0,50px,0)' },
+      to: { opacity: isInView ? 1 : 0, transform: isInView ? 'translate3d(0,0px,0)' : 'translate3d(0,50px,0)' },
+      delay: 0,
+      config: { duration: 1000 },
+    }),
+    useSpring({
+      from: { opacity: 0, transform: 'translate3d(0,50px,0)' },
+      to: { opacity: isInView ? 1 : 0, transform: isInView ? 'translate3d(0,0px,0)' : 'translate3d(0,50px,0)' },
+      delay: 500,
+      config: { duration: 1000 },
+    }),
+    useSpring({
+      from: { opacity: 0, transform: 'translate3d(0,50px,0)' },
+      to: { opacity: isInView ? 1 : 0, transform: isInView ? 'translate3d(0,0px,0)' : 'translate3d(0,50px,0)' },
+      delay: 1000,
+      config: { duration: 1000 },
+    }),
+    useSpring({
+      from: { opacity: 0, transform: 'translate3d(0,50px,0)' },
+      to: { opacity: isInView ? 1 : 0, transform: isInView ? 'translate3d(0,0px,0)' : 'translate3d(0,50px,0)' },
+      delay: 1500,
+      config: { duration: 1000 },
+    }),
+    useSpring({
+      from: { opacity: 0, transform: 'translate3d(0,50px,0)' },
+      to: { opacity: isInView ? 1 : 0, transform: isInView ? 'translate3d(0,0px,0)' : 'translate3d(0,50px,0)' },
+      delay:2000,
+      config: { duration: 1000 },
+    }),
+    useSpring({
+      from: { opacity: 0, transform: 'translate3d(0,50px,0)' },
+      to: { opacity: isInView ? 1 : 0, transform: isInView ? 'translate3d(0,0px,0)' : 'translate3d(0,50px,0)' },
+      delay: 2500,
+      config: { duration: 1000 },
+    }),
+    useSpring({
+      from: { opacity: 0, transform: 'translate3d(0,50px,0)' },
+      to: { opacity: isInView ? 1 : 0, transform: isInView ? 'translate3d(0,0px,0)' : 'translate3d(0,50px,0)' },
+      delay: 3000,
+      config: { duration: 1000 },
+    }),
+  ];
+  const imgAnimation = useSpring({
+    from: { opacity: 0, transform: 'translate3d(0,50px,0)' },
+    to: { opacity: isInView ? 1 : 0, transform: isInView ? 'translate3d(0,0px,0)' : 'translate3d(0,50px,0)' },
+    delay: 0,
+    config: { duration: 1000 },
+});
+
+  useEffect(() => {
+    window.addEventListener('scroll', checkScroll);
+    return () => {
+      window.removeEventListener('scroll', checkScroll);
+    };
+  }, [isInView]);
+
+  const cars = ['Tesla Model 3', 'Toyota RAV 4', 'Nissan Sentra', 'Toyota Yaris', 'BMW Sedan 5', 'BMW Coupe 2'];
+
   return (
-    <div className='modelData--body'>
+    <div className='modelData--body' ref={ref}>
       <div className='modelData--title'>
         <div>Vehicle Models</div>
         <div>Our rental fleet</div>
         <div>Choose from a variety of our amazing vehicles to rent for your next adventure or business trip</div>
       </div>
       <div className='modelData--container'>
-        <div className='modelData--cars'>
-          <div>Tesla Model 3</div>
-          <div>Toyota RAV 4</div>
-          <div>Nissan Sentra</div>
-          <div>Toyota Yaris</div>
-          <div>BMW Sedan 5</div>
-          <div>BMW Coupe 2</div>
+      <div className='modelData--cars'>
+          {cars.map((car, index) => <animated.div style={animations[index % animations.length]} key={car}>{car}</animated.div>)}
         </div>
 
         <div className='modelData--image'>
-          <img src="../../ssangyong-rexton.png" alt="" />
+          <animated.img style={imgAnimation} src="../../ssangyong-rexton.png" alt="" />
         </div>
 
-        <div className='modelData--data'>
+        <animated.div style={imgAnimation} className='modelData--data'>
           <div>$25 / rent per day</div>
           <div>
             <div>Model</div>
@@ -54,7 +119,7 @@ function ModelData() {
             <div>Gasoline</div>
           </div>
           <div className='modelData--button'><button>RESERVE NOW</button></div>
-        </div>
+        </animated.div>
       </div>
     </div>
   );

@@ -68,6 +68,9 @@ body {
 .review--leftBox {
     width: 90%;
     height:80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .review--rightBox {
     width: 90%;

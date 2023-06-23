@@ -1,10 +1,40 @@
-
+import {useSpring, animated} from 'react-spring';
+import {useEffect, useRef, useState} from 'react';
 import './review.css';
 
 function Review() {
+  const [isIntersecting, setIntersecting] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const ref = useRef();
 
+  const animation = useSpring({
+    from: { opacity: 0, transform: 'translate3d(0,50px,0)' },
+    to: {
+      opacity: isIntersecting && !hasAnimated ? 1 : 1,
+      transform: isIntersecting && !hasAnimated ? 'translate3d(0,0px,0)' : 'translate3d(0,0px,0)'
+    },
+    delay: 0,
+    config: { duration: 1000 },
+    onRest: () => setHasAnimated(true),
+  });
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIntersecting(entry.isIntersecting),
+      {
+        rootMargin: '-40% 0px',
+      }
+    );
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    return () => {
+      observer.unobserve(ref.current);
+    };
+  }, []);
+  
   return (
-    <div className='review--body' >
+    <div className='review--body' ref={ref}>
       <div className='review--title'>
         <div>Reviewed by People</div>
         <div>Client's Testimonials</div>
@@ -14,27 +44,27 @@ function Review() {
         </div>
       </div>
       <div className='review--container'>
-      <div className='review--whiteBackground'>
-        <div className='review--leftBox'>
-          <div>
-            "We rented a car from this website and had an amazing experience!
-             The booking was easy and the rental rates were very affordable. "
-          </div>
-          <div className='review--card'>
-            <img src="../../Artour.jpg" alt="" />
-            <div >
-              <div>Andreas Franck</div>
-              <div>Merkaz</div>
+        <animated.div style={animation} className='review--whiteBackground'>
+          <div className='review--leftBox'>
+            <div>
+              "We rented a car from this website and had an amazing experience!
+               The booking was easy and the rental rates were very affordable. "
             </div>
-            <img src="../../break.png" alt="" />
+            <div className='review--card'>
+              <img src="../../Artour.jpg" alt="" />
+              <div >
+                <div>Andreas Franck</div>
+                <div>Merkaz</div>
+              </div>
+              <img src="../../break.png" alt="" />
+            </div>
           </div>
-        </div>
-      </div>
-        <div className='review--whiteBackground'>
+        </animated.div>
+        <animated.div style={animation} className='review--whiteBackground'>
           <div className='review--rightBox'>
             <div>
               "The car was in great condition and made our trip even better.
-              Highly recommend for this car rental website!"
+               Highly recommend for this car rental website!"
             </div>
             <div className='review--card'>
               <img src="../../andreas.jpg" alt="" />
@@ -45,11 +75,10 @@ function Review() {
               <img src="../../break.png" alt="" />
             </div>
           </div>
-        </div>
+        </animated.div>
       </div>
     </div>
   );
 }
-
 
 export default Review;

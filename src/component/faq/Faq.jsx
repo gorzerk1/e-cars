@@ -1,8 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { useSpring, animated } from 'react-spring';
 import './faq.css';
 
 function Faq() {
   const [openBox, setOpenBox] = useState(null);
+  const [isIntersecting, setIntersecting] = useState(false);
+  const ref = useRef();
+
+  const carProps = useSpring({
+    opacity: isIntersecting ? 1 : 0,
+    transform: isIntersecting ? 'translate3d(0,0,0)' : 'translate3d(-100px,0,0)',
+    delay: 500,
+    config: {duration: 1000},
+  });
 
   const handleClick = (boxNumber) => {
     if (openBox === boxNumber) {
@@ -12,9 +22,29 @@ function Faq() {
     }
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if(entry.isIntersecting){
+          setIntersecting(entry.isIntersecting);
+        }
+      },
+      {
+        rootMargin: '-40% 0px',
+      }
+    );
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    return () => {
+      observer.unobserve(ref.current);
+    };
+  }, []);
+
+
   return (
-    <div className='faq--body'>
-      <img src="../../nissan_sentra.png" alt="" />
+    <div className='faq--body' ref={ref}>
+      <animated.img style={carProps} src="../../nissan_sentra.png" alt="" />
       <div className='faq--title'>
         <div>FAQ</div>
         <div>Frequently Asked Questions</div>
