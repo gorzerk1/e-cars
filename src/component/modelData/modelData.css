@@ -66,6 +66,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
 }
 .modelData--data {
     height:100%;
@@ -100,6 +101,10 @@ body {
     background-color: #43799f;
     text-align: center;
     border:0;
+    border-radius: 10px 10px 0 0;
+}
+.modelData--data > :last-child {
+    border-radius:0 0 10px 10px;
 }
 .modelData--data > .modelData--button {
     width: 101%;
