@@ -1,0 +1,75 @@
+@import url('https://use.fontawesome.com/releases/v6.0.0-beta2/css/all.css');
+
+body {
+    padding:0;
+    border: 0;
+    margin: 0;
+}
+
+.contact--body {
+    position: relative;
+    height:auto;
+    min-height: 18vh;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: Poppins,sans-serif;
+    overflow: auto;
+    background-color: #2d2d2d;
+}
+.contact--body .contact-wrapper {
+    position: relative;
+    width: 100%;
+    height:18vh;
+    overflow: hidden;
+}
+
+.contact--body .contact-wrapper > img {
+    width: 100%;
+    height: auto;
+    transform: translateY(-40px);
+}
+
+.contact--body .contact-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2d2d2d;
+    opacity: 0.8; 
+}
+.contact--container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height:100%;
+    gap:50px
+}
+.contact--container > div {
+    display: flex;
+    
+}
+.contact--container > :nth-child(1) {
+    color:white;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+.contact--box {
+    color:#43799f;
+    font-size: 2rem;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+}
+.contact--box > img {
+    width: 30px;
+    height:30px;
+    margin-right:10px
+}
