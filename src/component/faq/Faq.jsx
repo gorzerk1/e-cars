@@ -33,13 +33,18 @@ function Faq() {
         rootMargin: '-40% 0px',
       }
     );
+    let currentRef = null;
     if (ref.current) {
       observer.observe(ref.current);
+      currentRef = ref.current;
     }
     return () => {
-      observer.unobserve(ref.current);
+      if(currentRef) {
+        observer.unobserve(currentRef);
+      }
     };
   }, []);
+
 
 
   return (

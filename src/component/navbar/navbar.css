@@ -36,7 +36,7 @@ body {
     display: flex;
     align-items: center;
     gap: 5px;
-    cursor: pointer;
+    cursor: pointer;;
 }
 .navbar--logo > img {
     width: 73px;
@@ -54,6 +54,7 @@ body {
     padding: 0;
     font-weight: bolder;
     height:30px
+    
 }
 .navbar--logo > div > :nth-child(2) {
     font-size: 1.1rem;
@@ -90,6 +91,10 @@ body {
 }
 .navbar--menu {
     display: none;
+}
+a {
+    text-decoration: none;
+    color:black
 }
 @media (max-width: 1370px) {
     .navbar--container {

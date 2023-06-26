@@ -1,119 +1,139 @@
+import React from 'react';
+import { useSpring, animated, config } from 'react-spring';
+import { useInView } from 'react-intersection-observer';
 import './carMenu.css';
+
+const carData = [
+  {
+    image: "../../ToyotaRAV4.png",
+    name: "Toyota Rav 4",
+    year: 2021,
+    engineType: "Diesel",
+    model: "XLE Premium",
+    transmission: "Manual",
+    price: 30,
+    duration: 0
+  },
+  {
+    image: "../../ToyotaYaris.png",
+    name: "Toyota Yaris",
+    year: 2021,
+    engineType: "Petrol",
+    model: "L",
+    transmission: "Automatic",
+    price: 10,
+    duration: 250
+  },
+  {
+    image: "../../teslaModle3.png",
+    name: "Tesla",
+    year: 2022,
+    engineType: "EV",
+    model: "Model 3",
+    transmission: "Automatic",
+    duration: 500
+  },
+  {
+    image: "../../nissan_sentra.png",
+    name: "Nissan Sentra",
+    year: 2021,
+    engineType: "Petrol",
+    model: "SV",
+    transmission: "Manual",
+    duration: 750
+  },
+  {
+    image: "../../M2_BMW.png",
+    name: "BMW",
+    year: 2023,
+    engineType: "Petrol",
+    model: "M2",
+    transmission: "Automatic",
+    duration: 1000
+  },
+  {
+    image: "../../M6_BMW.png",
+    name: "BMW",
+    year: 2023,
+    engineType: "Petrol",
+    model: "M6",
+    transmission: "Manual",
+    price: 40,
+  },
+  {
+    image: "../../ssangyong-rexton.png",
+    name: "Ssangyong Rexton",
+    year: 2023,
+    engineType: "Diesel",
+    model: "G4",
+    transmission: "Automatic",
+    price: 40,
+  },
+  {
+    image: "../../mazda6.png",
+    name: "Mazda 6",
+    year: 2021,
+    engineType: "Petrol",
+    model: "Sport",
+    transmission: "Automatic",
+    price: 35,
+  },
+  {
+    image: "../../ToyotaRAV4.png",
+    name: "Honda Civic",
+    year: 2022,
+    engineType: "Petrol",
+    model: "R",
+    transmission: "Manual",
+    price: 15,
+  },
+  {
+    image: "../../Mercedes-Benz.png",
+    name: "Mercedes-Benz",
+    year: 2017,
+    engineType: "Petrol",
+    model: "Coupe",
+    transmission: "Automatic",
+    price: 20,
+  },
+];
+function CarItem({ item, index }) {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+
+  const props = useSpring(inView ? {
+    from: { opacity: 0, transform: 'translateX(-50px)' },
+    to: { opacity: 1, transform: 'translateX(0px)' },
+    config: config.molasses,
+  } : {});
+
+  return (
+    <animated.div 
+      className={`carMenu--box ${index % 2 === 0 ? 'even' : 'odd'}`}
+      style={props}
+      ref={ref}
+    >
+      <div className='carMenu--image'><img src={item.image} alt="" /></div>
+      <div className='carMenu--div'>
+        <div>{item.name}</div>
+        <div>Year: {item.year}</div>
+        <div>Engine Type: {item.engineType}</div>
+        <div>Model: {item.model}</div>
+        <div>Transmission: {item.transmission}</div>
+        <div>${item.price} per day</div>
+      </div>
+    </animated.div>
+  );
+}
 
 function CarMenu() {
   return (
     <div className='carMenu--body'>
       <div className='carMenu--container'>
-        <div className='carMenu--box'>
-          <div className='carMenu--image'><img src="../../ToyotaRAV4.png" alt="" /></div>
-          <div className='carMenu--div'>
-            <div>Toyota Rav 4</div>
-            <div>Year: 2021</div>
-            <div>Engine Type: Diesel</div>
-            <div>Model: XLE Premium</div>
-            <div>Transmission: Menual</div>
-            <div>$30 per day</div>
-          </div>
-        </div>
-        <div className='carMenu--box'>
-          <div className='carMenu--image'><img src="../../ToyotaYaris.png" alt="" /></div>
-          <div className='carMenu--div'>
-            <div>Toyota Yaris</div>
-            <div>Year: 2021</div>
-            <div>Engine: petrol</div>
-            <div>Model : L</div>
-            <div>Transmission: automatic</div>
-            <div>$10 per day</div>
-          </div>
-        </div>
-        <div className='carMenu--box'>
-          <div className='carMenu--image'><img src="../../teslaModle3.png" alt="" /></div>
-          <div className='carMenu--div'>
-            <div>Tesla</div>
-            <div>Year: 2022</div>
-            <div>Engine: EV</div>
-            <div>Model: model 3</div>
-            <div>Transmission: automatic</div>
-            <div>$30 per day</div>
-          </div>
-        </div>
-        <div className='carMenu--box'>
-          <div className='carMenu--image'><img src="../../nissan_sentra.png" alt="" /></div>
-          <div className='carMenu--div'>
-            <div>Nissan Sentra</div>
-            <div>Year: 2021</div>
-            <div>Engine: pertrol</div>
-            <div>Model: SV</div>
-            <div>Transmission: menual</div>
-            <div>$15 per day</div>
-          </div>
-        </div>
-        <div className='carMenu--box'>
-          <div className='carMenu--image'><img src="../../M2_BMW.png" alt="" /></div>
-          <div className='carMenu--div'>
-            <div>BMW</div>
-            <div>Year: 2023</div>
-            <div>Engine: petrol</div>
-            <div>Model: M2</div>
-            <div>Transmission: automatic</div>
-            <div>$50 per day</div>
-          </div>
-        </div>
-        <div className='carMenu--box'>
-          <div className='carMenu--image'><img src="../../M6_BMW.png" alt="" /></div>
-          <div className='carMenu--div'>
-            <div>BMW</div>
-            <div>Year: 2023</div>
-            <div>Engine: petrol</div>
-            <div>Model: M6</div>
-            <div>Transmission: menual</div>
-            <div>$40 per day</div>
-          </div>
-        </div>
-        <div className='carMenu--box'>
-          <div className='carMenu--image'><img src="../../ssangyong-rexton.png" alt="" /></div>
-          <div className='carMenu--div'>
-            <div>Ssangyong Rexton</div>
-            <div>Year: 2023</div>
-            <div>Engine: diesel</div>
-            <div>Model: G4</div>
-            <div>Transmission: automatic </div>
-            <div>$40 per day</div>
-          </div>
-        </div>
-        <div className='carMenu--box'>
-          <div className='carMenu--image'><img src="../../mazda6.png" alt="" /></div>
-          <div className='carMenu--div'>
-            <div>Mazda 6</div>
-            <div>Year: 2021</div>
-            <div>Engine: petrol</div>
-            <div>Model: Sport</div>
-            <div>Transmission: automatic</div>
-            <div>$35 per day</div>
-          </div>
-        </div>
-        <div className='carMenu--box'>
-          <div className='carMenu--image'><img src="../../ToyotaRAV4.png" alt="" /></div>
-          <div className='carMenu--div'>
-            <div>Honda Civic</div>
-            <div>Year: 2022</div>
-            <div>Engine: petrol</div>
-            <div>Model: R</div>
-            <div>Transmission: menual</div>
-            <div>$15 per day</div>
-          </div>
-        </div>
-        <div className='carMenu--box'>
-        <div className='carMenu--image'><img src="../../Mercedes-Benz.png" alt="" /></div>
-          <div className='carMenu--div'>
-            <div>Mercedes-Benz</div>
-            <div>Year: 2017</div>
-            <div>Engine: petrol</div>
-            <div>Model: coupe</div>
-            <div>Transmission: automatic</div>
-            <div>$20 per day</div>
-          </div>
-        </div>
+        {carData.map((item, index) => (
+          <CarItem key={index} index={index} item={item} />
+        ))}
       </div>
     </div>
   );

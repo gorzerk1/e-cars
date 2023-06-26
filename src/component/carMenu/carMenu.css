@@ -57,7 +57,7 @@ body {
 
 .carMenu--div > :last-child {
     position: absolute;
-    bottom:30px;
+    bottom:15px;
     right:10px;
     font-weight: bolder;
 }
