@@ -32,7 +32,7 @@ function AboutCompany() {
 
   return (
     <div className='aboutCompany--body'>
-      <img src="../../sale_car.jpg" />
+      <img src="../../sale_car.jpg" alt="Sale car" />
       <div className='aboutCompany--container' ref={ref}>
         <div className='aboutCompany--box'>
           <animated.div style={springs1}>About Company</animated.div>
@@ -41,21 +41,21 @@ function AboutCompany() {
           </animated.div>
           <animated.div className='aboutCompany--bottomBox' style={springs3}>
             <div className='aboutCompany--Boxes'>
-              <img src="../../car_icon2.png" alt="" />
+              <img src="../../car_icon2.png" alt="Car icon 2" />
               <div>
                 <div>20+</div>
                 <div>Product amount</div>
               </div>
             </div>
             <div className='aboutCompany--Boxes'>
-              <img src="../../car_icon3.png" alt="" />
+              <img src="../../car_icon3.png" alt="Car icon 3" />
               <div>
                 <div>15+</div>
                 <div>Rental outlets</div>
               </div>
             </div>
             <div className='aboutCompany--Boxes'>
-              <img src="../../car_icon4.png" alt="" />
+              <img src="../../car_icon4.png" alt="Car icon 4" />
               <div>
                 <div>10+</div>
                 <div>Repair shop</div>
