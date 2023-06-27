@@ -1,15 +1,17 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 
 const MyContext = React.createContext();
 
 function ThemeProvider({ children }) {
-  const [imageKey, setImageKey] = useState(null);
+  const [currentPath, setCurrentPath] = useState('');
+  
+  const setPath = (path) => setCurrentPath(path);
 
   return (
       <MyContext.Provider
       value={{
-        setImageKey,
-        imageKey,
+        currentPath,
+        setPath
       }}
     >
       {children}

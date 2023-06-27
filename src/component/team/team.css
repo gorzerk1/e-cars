@@ -60,3 +60,32 @@ body {
     font-size: 1rem;
     color:gray
 }
+@media (max-width:1430px) {
+    .team--container {
+    width: 95%;
+    height:100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+}
+@media (max-width:1100px) {
+    .team--container {
+    width: 95%;
+    min-height:140vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+.team--container > div {
+    padding: 20px 0;
+}
+}
+@media (max-width:780px) {
+        .team--container {
+    width: 95%;
+    min-height:270vh;
+    display: grid;
+    grid-template-columns: 1fr;
+
+}
+}

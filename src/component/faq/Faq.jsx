@@ -7,9 +7,11 @@ function Faq() {
   const [isIntersecting, setIntersecting] = useState(false);
   const ref = useRef();
 
+
+
   const carProps = useSpring({
     opacity: isIntersecting ? 1 : 0,
-    transform: isIntersecting ? 'translate3d(0,0,0)' : 'translate3d(-100px,0,0)',
+    transform: isIntersecting ? 'translate3d(0,0,0)' : 'translate3d(100px,0,0)',
     delay: 500,
     config: {duration: 1000},
   });

@@ -121,7 +121,7 @@ function CarItem({ item, index }) {
         <div>Engine Type: {item.engineType}</div>
         <div>Model: {item.model}</div>
         <div>Transmission: {item.transmission}</div>
-        <div>${item.price} per day</div>
+        <div>${item.price} a day</div>
       </div>
     </animated.div>
   );

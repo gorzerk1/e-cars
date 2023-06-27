@@ -15,11 +15,11 @@ function Navbar() {
         </Link>
         <div className='navbar--middleBox'>
           <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/vehicle">Vehicle Models</Link>
-          <Link to="/testimonials">Testimonials</Link>
-          <Link to="/ourTeam">Out Team</Link>
-          <Link to="/contactUs">Contact</Link>
+          <Link to="/About">About</Link>
+          <Link to="/Vehicle">Vehicle Models</Link>
+          <Link to="/Testimonials">Testimonials</Link>
+          <Link to="/Team">Out Team</Link>
+          <Link to="/Contact">Contact</Link>
         </div>
         <div className='navbar--rightBox'>
           <div>Sign In</div>

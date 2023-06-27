@@ -17,12 +17,12 @@ body {
     justify-content: flex-start;
     align-items: center;
     font-family: Poppins,sans-serif;
-    overflow: auto;
+    overflow: hidden;
     background-color: #fff;
 }
 .faq--body > img {
     position: absolute;
-    left:-10%;
+    right:-10%;
     top:35%;
     width: 34%;
     height: auto;
@@ -76,7 +76,6 @@ body {
 .faq--smallBox {
     display: flex;
     flex-direction: column;
-    
 }
 
 .faq--smallBox > :nth-child(1) {
@@ -104,7 +103,7 @@ body {
     .faq--body {
         min-height: 90vh;
         justify-content: flex-start;
-        align-items: flex-end;
+        align-items: flex-start;
     }
     .faq--body > img {
         top:33%;
@@ -112,7 +111,7 @@ body {
         height: auto;
     }
      .faq--container {
-        margin-right:50px;
+        margin-left:50px;
         width: 55%;
     }
     
@@ -124,8 +123,8 @@ body {
     }
     .faq--body > img {
         position: absolute;
-        left:-15%;
-        top:45%;
+        right:-15%;
+        top:50%;
         width: 44%;
         height: auto;
     }
@@ -143,7 +142,7 @@ body {
         align-items: center;
     }
      .faq--container {
-        margin-right:0;
+        margin:0;
         width: 90%;
     }
     .faq--title {

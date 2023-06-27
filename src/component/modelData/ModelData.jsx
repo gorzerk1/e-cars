@@ -1,76 +1,48 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { useSpring, animated } from 'react-spring';
+import { useSprings, animated, config } from 'react-spring';
+import { carData } from "../../data/VehicleData.jsx";
 import './modelData.css';
 
 function ModelData() {
   const ref = useRef();
-  const [isInView, setIsInView] = useState(false);
-  const checkScroll = () => {
-    const scrollPercent = (ref.current.getBoundingClientRect().top) / window.innerHeight;
-    if (scrollPercent < 0.4) {
-      setIsInView(true);
-    }
+  const carListRef = useRef();
+  const [selectedCar, setSelectedCar] = useState(carData[0]); 
+  const [isScrollable, setIsScrollable] = useState(false);
+
+  const checkCarListScroll = () => {
+    const atBottom = carListRef.current.scrollHeight - carListRef.current.scrollTop === carListRef.current.clientHeight;
+    setIsScrollable(!atBottom);
   };
 
-  const animations = [
-    useSpring({
-      from: { opacity: 0, transform: 'translate3d(0,50px,0)' },
-      to: { opacity: isInView ? 1 : 0, transform: isInView ? 'translate3d(0,0px,0)' : 'translate3d(0,50px,0)' },
-      delay: 0,
-      config: { duration: 1000 },
-    }),
-    useSpring({
-      from: { opacity: 0, transform: 'translate3d(0,50px,0)' },
-      to: { opacity: isInView ? 1 : 0, transform: isInView ? 'translate3d(0,0px,0)' : 'translate3d(0,50px,0)' },
-      delay: 500,
-      config: { duration: 1000 },
-    }),
-    useSpring({
-      from: { opacity: 0, transform: 'translate3d(0,50px,0)' },
-      to: { opacity: isInView ? 1 : 0, transform: isInView ? 'translate3d(0,0px,0)' : 'translate3d(0,50px,0)' },
-      delay: 1000,
-      config: { duration: 1000 },
-    }),
-    useSpring({
-      from: { opacity: 0, transform: 'translate3d(0,50px,0)' },
-      to: { opacity: isInView ? 1 : 0, transform: isInView ? 'translate3d(0,0px,0)' : 'translate3d(0,50px,0)' },
-      delay: 1500,
-      config: { duration: 1000 },
-    }),
-    useSpring({
-      from: { opacity: 0, transform: 'translate3d(0,50px,0)' },
-      to: { opacity: isInView ? 1 : 0, transform: isInView ? 'translate3d(0,0px,0)' : 'translate3d(0,50px,0)' },
-      delay:2000,
-      config: { duration: 1000 },
-    }),
-    useSpring({
-      from: { opacity: 0, transform: 'translate3d(0,50px,0)' },
-      to: { opacity: isInView ? 1 : 0, transform: isInView ? 'translate3d(0,0px,0)' : 'translate3d(0,50px,0)' },
-      delay: 2500,
-      config: { duration: 1000 },
-    }),
-    useSpring({
-      from: { opacity: 0, transform: 'translate3d(0,50px,0)' },
-      to: { opacity: isInView ? 1 : 0, transform: isInView ? 'translate3d(0,0px,0)' : 'translate3d(0,50px,0)' },
-      delay: 3000,
-      config: { duration: 1000 },
-    }),
-  ];
-  const imgAnimation = useSpring({
-    from: { opacity: 0, transform: 'translate3d(0,50px,0)' },
-    to: { opacity: isInView ? 1 : 0, transform: isInView ? 'translate3d(0,0px,0)' : 'translate3d(0,50px,0)' },
-    delay: 0,
-    config: { duration: 1000 },
-});
+  const animations = useSprings(carData.length, carData.map(() => ({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: config.molasses,
+  })));
 
   useEffect(() => {
-    window.addEventListener('scroll', checkScroll);
-    return () => {
-      window.removeEventListener('scroll', checkScroll);
+    const checkWindowSize = () => {
+      if (window.innerWidth <= 1200) {
+        setIsScrollable(false);
+        carListRef.current.removeEventListener('scroll', checkCarListScroll);
+      } else {
+        carListRef.current.addEventListener('scroll', checkCarListScroll);
+        checkCarListScroll();
+      }
     };
-  }, [isInView]);
 
-  const cars = ['Tesla Model 3', 'Toyota RAV 4', 'Nissan Sentra', 'Toyota Yaris', 'BMW Sedan 5', 'BMW Coupe 2'];
+    checkWindowSize();
+    window.addEventListener('resize', checkWindowSize);
+
+    const currentCarListRef = carListRef.current;
+
+    return () => {
+      window.removeEventListener('resize', checkWindowSize);
+      if (currentCarListRef) {
+        currentCarListRef.removeEventListener('scroll', checkCarListScroll);
+      }
+    };
+  }, []);
 
   return (
     <div className='modelData--body' ref={ref}>
@@ -80,43 +52,53 @@ function ModelData() {
         <div>Choose from a variety of our amazing vehicles to rent for your next adventure or business trip</div>
       </div>
       <div className='modelData--container'>
-      <div className='modelData--cars'>
-          {cars.map((car, index) => <animated.div style={animations[index % animations.length]} key={car}>{car}</animated.div>)}
+        <div className='modelData--cars-wrapper'>
+          <div className='modelData--cars' ref={carListRef}>
+          {carData.map((car, index) => (
+              <animated.div 
+                style={animations[index]} 
+                key={`${car.name}-${car.model}`} 
+                onClick={() => setSelectedCar(car)}
+                className={selectedCar === car ? 'selected' : ''} 
+              >
+                {`${car.name} ${car.model}`}
+              </animated.div>
+            ))}
+          </div>
+          {isScrollable && <img src="../../arrow_down.png" alt="Scroll down" />}
         </div>
-
         <div className='modelData--image'>
-          <animated.img style={imgAnimation} src="../../ssangyong-rexton.png" alt="" />
+          <animated.img style={animations[0]} src={selectedCar.image} alt="" />
         </div>
-
-        <animated.div style={imgAnimation} className='modelData--data'>
-          <div>$25 / rent per day</div>
+        <animated.div style={animations[0]} className='modelData--data'>
+          <div>${selectedCar.price} / rent per day</div>
           <div>
             <div>Model</div>
-            <div>Passat CC</div>
+            <div>{selectedCar.model}</div>
           </div>
           <div>
             <div>Mark</div>
-            <div>Volkswagen</div>
+            <div>{selectedCar.name}</div>
           </div>
           <div>
             <div>Year</div>
-            <div>2008</div>
+            <div>{selectedCar.year}</div>
           </div>
           <div>
             <div>Doors</div>
-            <div>4/5</div>
+            <div>4 / 5</div>
           </div>
           <div>
             <div>ECO</div>
-            <div>Yes</div>
+            <div>{selectedCar.ECO ? "Yes" : "No"}</div>
           </div>
           <div>
             <div>Transmission</div>
-            <div>Automatic</div>
+            <div>{selectedCar.transmission}</div>
           </div>
           <div>
             <div>Fuel</div>
-            <div>Gasoline</div>
+            <div>{selectedCar.fuel}</div>
           </div>
           <div className='modelData--button'><button>RESERVE NOW</button></div>
         </animated.div>
