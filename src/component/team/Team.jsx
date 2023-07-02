@@ -24,7 +24,7 @@ function Team() {
       <div className='team--container'>
         <animated.div style={animation1}>
           <div className='team--box' ref={ref1}>
-            <img src="../../random_person6.jpg" alt="" />
+            <img src="../../random_person3.jpg" alt="" />
             <div>
               <div>Luke Miller</div>
               <div>Salesman</div>
@@ -33,7 +33,7 @@ function Team() {
         </animated.div>
         <animated.div style={animation2}>
           <div className='team--box' ref={ref2}>
-            <img src="../../random_person3.jpg" alt="" />
+            <img src="../../random_person1.jpg" alt="" />
             <div>
               <div>Michael Diaz</div>
               <div>Business Owner</div>
@@ -69,10 +69,10 @@ function Team() {
         </animated.div>
         <animated.div style={animation6}>
           <div className='team--box' ref={ref6}>
-            <img src="../../random_person1.jpg" alt="" />
+            <img src="../../random_person6.jpg" alt="" />
             <div>
-              <div>Luke Miller</div>
-              <div>Salesman</div>
+              <div>Caitlyn Hunt</div>
+              <div>Menager</div>
             </div>
           </div>
         </animated.div>
