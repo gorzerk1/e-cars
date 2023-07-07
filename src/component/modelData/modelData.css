@@ -155,7 +155,7 @@ body {
 }
 .modelData--data > .modelData--button {
     width: 101%;
-    height:20%;
+    height:14.5vh;
     border:0;
     display: flex;
     justify-content: center;
