@@ -72,31 +72,31 @@ function ModelData() {
         </div>
         <animated.div style={animations[0]} className='modelData--data'>
           <div>${selectedCar.price} / rent per day</div>
-          <div>
+          <div className='modelData--cell'>
             <div>Model</div>
             <div>{selectedCar.model}</div>
           </div>
-          <div>
+          <div className='modelData--cell'>
             <div>Mark</div>
             <div>{selectedCar.name}</div>
           </div>
-          <div>
+          <div className='modelData--cell'>
             <div>Year</div>
             <div>{selectedCar.year}</div>
           </div>
-          <div>
+          <div className='modelData--cell'>
             <div>Doors</div>
             <div>4 / 5</div>
           </div>
-          <div>
+          <div className='modelData--cell'>
             <div>ECO</div>
             <div>{selectedCar.ECO ? "Yes" : "No"}</div>
           </div>
-          <div>
+          <div className='modelData--cell'>
             <div>Transmission</div>
             <div>{selectedCar.transmission}</div>
           </div>
-          <div>
+          <div className='modelData--cell'>
             <div>Fuel</div>
             <div>{selectedCar.fuel}</div>
           </div>

@@ -9,10 +9,10 @@ function InstallApp() {
         <div className='installApp--leftBox'>
           <div>Download our app to get most out of it</div>
           <div>
-          Thrown shy denote ten ladies though ask saw. 
-          Or by to he going think order event music. 
-          Incommode so intention defective at convinced. 
-          Led income months itself and houses you.
+          Fast, easy, all from your phone - that's our app for you. 
+          Need a car rental? Just a few taps and you're set. 
+          No fuss, no stress. 
+          Download our app, make your life easier, and hit the road faster!
           </div>
           <div className='installApp--button'>
             <img src="../../googleStore.svg" alt="" />

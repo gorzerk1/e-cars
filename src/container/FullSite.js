@@ -9,24 +9,27 @@ import Review from '../component/review/Review.jsx'
 import Faq from '../component/faq/Faq.jsx'
 import InstallApp from '../component/installApp/InstallApp.jsx'
 import Footer from '../component/footer/Footer.jsx'
+import { useRef } from 'react';
 
 function FullSite() {
+  const bookRef = useRef(null);
+  const faqRef = useRef(null);
+
   return (
     <>
       <Navbar/>
-      <Main/>
-      <Book/>
+      <Main bookRef={bookRef} faqRef={faqRef}/>
+      <div ref={bookRef}><Book/></div>
       <Information/>
       <ModelData/>
       <Ads/>
       <AboutUs/>
       <Review/>
-      <Faq/>
+      <div ref={faqRef}><Faq/></div>
       <InstallApp/>
       <Footer/>
     </>
   );
 }
-
 
 export default FullSite;

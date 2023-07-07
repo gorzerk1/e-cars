@@ -1,8 +1,7 @@
 import {useSpring, animated} from 'react-spring';
 import './main.css';
 
-function Main() {
-
+function Main({ bookRef, faqRef }) {
   const infoProps = useSpring({
     from: {opacity: 0, transform: 'translate3d(0,50px,0)'},
     to: {opacity: 1, transform: 'translate3d(0,0px,0)'},
@@ -17,8 +16,17 @@ function Main() {
     config: {duration: 1000},
   });
 
+
+  const onBookRideClick = () => {
+    bookRef.current.scrollIntoView({ behavior: 'smooth', block: 'center'});
+  };
+
+  const onLearnMoreClick = () => {
+    faqRef.current.scrollIntoView({ behavior: 'smooth', block: 'center'});
+  };
+
   return (
-    <div className="main--body" >
+    <div className="main--body">
       <img src="../../background_town.png" alt="" />
       <div className='main--container'>
         <animated.div style={infoProps} className='main--info'>
@@ -26,8 +34,8 @@ function Main() {
           <div>Save <span>big</span> with our car rental</div>
           <div>Rent the car of your dreams. Unbeatable prices, unlimited miles, flexible pick-up options and much more.</div>
           <div className='main--buttons'>
-            <button>Book Ride</button>
-            <button>Learn More</button>
+            <button onClick={onBookRideClick}>Book Ride</button>
+            <button onClick={onLearnMoreClick}>Learn More</button>
           </div>
         </animated.div>
         <animated.div style={carProps} className='main--car'>
@@ -35,7 +43,7 @@ function Main() {
         </animated.div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Main;

@@ -50,6 +50,9 @@ body {
     display: flex;
     justify-content: space-between;
 }
+.installApp--button > img {
+    cursor: pointer;
+}
 .installApp--rightBox {
     width: 60%;
     height:auto;
