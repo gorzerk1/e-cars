@@ -5,6 +5,15 @@ import './carMenu.css';
 
 const carData = [
   {
+    image: "../../Mercedes-Benz.png",
+    name: "Mercedes-Benz",
+    year: 2017,
+    engineType: "Petrol",
+    model: "Coupe",
+    transmission: "Automatic",
+    price: 20,
+  },
+  {
     image: "../../ToyotaRAV4.png",
     name: "Toyota Rav 4",
     year: 2021,
@@ -30,8 +39,18 @@ const carData = [
     year: 2022,
     engineType: "EV",
     model: "Model 3",
+    price:30,
     transmission: "Automatic",
     duration: 500
+  },
+  {
+    image: "../../ssangyong-rexton.png",
+    name: "Ssangyong Rexton",
+    year: 2023,
+    engineType: "Diesel",
+    model: "G4",
+    transmission: "Automatic",
+    price: 40,
   },
   {
     image: "../../nissan_sentra.png",
@@ -39,6 +58,7 @@ const carData = [
     year: 2021,
     engineType: "Petrol",
     model: "SV",
+    price:20,
     transmission: "Manual",
     duration: 750
   },
@@ -49,7 +69,8 @@ const carData = [
     engineType: "Petrol",
     model: "M2",
     transmission: "Automatic",
-    duration: 1000
+    duration: 1000,
+    price:45
   },
   {
     image: "../../M6_BMW.png",
@@ -58,15 +79,6 @@ const carData = [
     engineType: "Petrol",
     model: "M6",
     transmission: "Manual",
-    price: 40,
-  },
-  {
-    image: "../../ssangyong-rexton.png",
-    name: "Ssangyong Rexton",
-    year: 2023,
-    engineType: "Diesel",
-    model: "G4",
-    transmission: "Automatic",
     price: 40,
   },
   {
@@ -79,7 +91,7 @@ const carData = [
     price: 35,
   },
   {
-    image: "../../ToyotaRAV4.png",
+    image: "../../Hondacivic.png",
     name: "Honda Civic",
     year: 2022,
     engineType: "Petrol",
@@ -87,15 +99,7 @@ const carData = [
     transmission: "Manual",
     price: 15,
   },
-  {
-    image: "../../Mercedes-Benz.png",
-    name: "Mercedes-Benz",
-    year: 2017,
-    engineType: "Petrol",
-    model: "Coupe",
-    transmission: "Automatic",
-    price: 20,
-  },
+
 ];
 function CarItem({ item, index }) {
   const [ref, inView] = useInView({
