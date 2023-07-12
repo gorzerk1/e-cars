@@ -87,7 +87,7 @@ export const carData = [
     transmission: "Manual",
     fuel: "Petrol",
     price: 15,
-    image: "../../ToyotaRAV4.png",
+    image: "../../hondacivic.png",
   },
   {
     name: "Mercedes-Benz",
